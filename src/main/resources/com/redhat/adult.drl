@@ -1,0 +1,13 @@
+package com.redhat;
+unit PersonUnit;
+
+rule "Is Adult"
+when
+    $p: /persons[age > 18];
+then
+    $p.setAdult(true);
+end
+
+query "adult"
+    $p: /persons;
+end
